@@ -21,6 +21,13 @@ public class ProductController {
     }
 
 
+    @PutMapping("/updateProduct")
+    public ProductEntity updateProduct(@RequestBody ProductEntity product){
+        return  this.productDao.updateProduct(product);
+
+    }
+
+
     @GetMapping("/deleteProduct")
     public String deleteProduct(@RequestParam int id){
         this.productDao.deleteProduct(id);

@@ -17,6 +17,12 @@ public class ProductDao {
 
     }
 
+    public ProductEntity updateProduct(ProductEntity product){
+        return  this.productRepo.save(product);
+
+    }
+
+
     public void deleteProduct (Integer id)
     {
          this.productRepo.deleteById(id);
