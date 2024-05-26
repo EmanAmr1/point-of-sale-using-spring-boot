@@ -16,4 +16,9 @@ public class ProductDao {
         return  this.productRepo.save(product);
 
     }
+
+    public void deleteProduct (Integer id)
+    {
+         this.productRepo.deleteById(id);
+    }
 }
