@@ -35,4 +35,10 @@ public class ProductController {
     }
 
 
+    @GetMapping("/getProductByBarcode")
+    public ProductEntity getProductByBarcode(@RequestParam String barcode)
+    {
+           return  this.productDao.getProductByBarcode(barcode);
+    }
+
 }

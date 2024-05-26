@@ -4,6 +4,9 @@ import com.pos.pos.entity.ProductEntity;
 import com.pos.pos.repository.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Optional;
 
 @Service
 public class ProductDao {
@@ -27,4 +30,13 @@ public class ProductDao {
     {
          this.productRepo.deleteById(id);
     }
+
+
+
+    public ProductEntity getProductByBarcode( String barcode)
+    {
+        Optional<ProductEntity> O=Optional.ofNullable(this.productRepo.findByBarcode(barcode));
+          return O.isPresent() ?O.get() :null;
+    }
+
 }
