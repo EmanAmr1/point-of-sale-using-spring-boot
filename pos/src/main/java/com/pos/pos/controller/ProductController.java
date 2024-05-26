@@ -6,6 +6,8 @@ import com.pos.pos.entity.ProductEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RequestMapping("/products")
 @RestController
 public class ProductController {
@@ -45,6 +47,11 @@ public class ProductController {
     public ProductEntity getProductBId(@RequestParam int id)
     {
         return  this.productDao.getProductById(id);
+    }
+
+    @GetMapping("/getAllProducts")
+    public List<ProductEntity> getAllProducts(){
+        return this.productDao.getAllProducts();
     }
 
 }
