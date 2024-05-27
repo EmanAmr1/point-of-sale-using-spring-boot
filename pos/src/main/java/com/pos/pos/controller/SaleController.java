@@ -6,6 +6,7 @@ import com.pos.pos.entity.SaleEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -21,6 +22,11 @@ public class SaleController {
     @GetMapping("/getSales")
     public List<SaleEntity> getSales(){
         return  this.saleDao.getSales();
+    }
+
+    @GetMapping("/getSalesByOrderId")
+    public List<SaleEntity> getSalesByOrderId(@RequestParam Integer orderId){
+        return    this.saleDao.getSalesByOrderId(orderId);
     }
 
  }

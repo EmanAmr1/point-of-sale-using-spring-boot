@@ -46,6 +46,8 @@ public List<SaleEntity> getSales(){
      return    this.saleRepo.findAll();
 }
 
-
+    public List<SaleEntity> getSalesByOrderId( Integer orderId){
+        return    this.saleRepo.findAllByOrderId(orderId);
+    }
 
 }
