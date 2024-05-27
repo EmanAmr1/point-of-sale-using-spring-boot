@@ -1,6 +1,7 @@
 package com.pos.pos.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -22,5 +23,18 @@ public class SaleEntity {
 
     @Column(name = "barcode")
     private String barcode;
+
+
+    @JsonManagedReference
+    @OneToOne
+    @JoinColumn(name = "product_id",insertable = false,updatable = false)
+    private ProductEntity product;
+
+
+
+    @JsonManagedReference
+    @OneToOne
+    @JoinColumn(name = "order_id",insertable = false,updatable = false)
+    private OrderEntity order;
 
 }

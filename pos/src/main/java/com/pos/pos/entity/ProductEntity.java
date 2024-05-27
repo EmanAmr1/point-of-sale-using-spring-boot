@@ -1,5 +1,7 @@
 package com.pos.pos.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -24,6 +26,10 @@ public class ProductEntity {
 
 
 
+    @JsonBackReference
+    @OneToOne(mappedBy = "product")
+    @JoinColumn(name = "product_id",insertable = false,updatable = false)
+    private SaleEntity sale;
 
 
 

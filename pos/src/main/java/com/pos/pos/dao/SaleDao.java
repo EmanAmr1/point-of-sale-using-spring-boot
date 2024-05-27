@@ -42,4 +42,10 @@ public OrderEntity saveSale(List<OrderDto> orderDto){
 }
 
 
+public List<SaleEntity> getSales(){
+     return    this.saleRepo.findAll();
+}
+
+
+
 }
