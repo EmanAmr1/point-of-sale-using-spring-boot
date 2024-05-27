@@ -5,10 +5,7 @@ import com.pos.pos.dao.SaleDao;
 import com.pos.pos.dto.OrderDto;
 import com.pos.pos.entity.OrderEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,4 +24,9 @@ public class OrderController {
         return this.saleDao.saveSale(orderDto);}
 
 
+    //get all orders
+    @GetMapping("/getAllOrders")
+    public List<OrderEntity> getAllOrders(){
+        return this.orderDao.getAllOrders();
+    }
 }

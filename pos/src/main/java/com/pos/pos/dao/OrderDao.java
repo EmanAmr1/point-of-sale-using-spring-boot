@@ -29,6 +29,12 @@ public class OrderDao {
 
     }
 
+    //get all orders
+
+    public List<OrderEntity> getAllOrders(){
+        return this.orderRepo.findAll();
+    }
+
 
 
 }
